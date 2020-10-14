@@ -24,6 +24,7 @@ import android.view.Surface;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.google.common.util.concurrent.ListenableFuture;
@@ -45,7 +46,7 @@ public class TakePhotoActivity extends AppCompatActivity {
     private Executor executor;
     private ListenableFuture<ProcessCameraProvider> cameraProviderFuture;
     private PreviewView previewView;
-    private Button takePhotoView;
+    private View takePhotoView;
 
     private CameraInfo cameraInfo;
     private CameraControl cameraControl;
@@ -61,7 +62,7 @@ public class TakePhotoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_take_photo);
         imageView = (ImageView) findViewById(R.id.image_view);
         previewView = (PreviewView) findViewById(R.id.preview_view);
-        takePhotoView = (Button) findViewById(R.id.take_photo_view);
+        takePhotoView = (View) findViewById(R.id.take_photo_view);
         takePhotoView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
